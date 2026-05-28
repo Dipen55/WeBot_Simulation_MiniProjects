@@ -1,0 +1,66 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "../protos/TrackOne.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 2.1731121537878493e-16 -7.243707179292831e-17 2.609820556275535
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 1
+  floorAppearance PBRAppearance {
+    roughness 1
+    roughnessMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/parquetry/chequered_parquetry_roughness.jpg"
+      ]
+    }
+    metalness 0
+    normalMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/parquetry/chequered_parquetry_normal.jpg"
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/parquetry/chequered_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+}
+E-puck {
+  hidden translation_1 0 0.025999999999999995 0.02
+  hidden rotation_1 0 -1 0 2.7322119952608572
+  hidden translation_2 0 -0.026000000000000027 0.02
+  hidden rotation_2 0 -0.9999999999999999 0 5.474842847619075
+  translation -0.06992200194622615 0.07923892233083162 -8.303083491281033e-05
+  rotation -8.71738115005452e-06 -0.0005666149917838728 0.9999998394357164 3.124940329675299
+  controller "line_follower"
+  groundSensorsSlot [
+    DistanceSensor {
+      translation 0 0.02 0
+      rotation 0.12569805618974617 0.9831084394707074 -0.13303305946865107 1.51876
+      name "ir1"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0 -0.01 0
+      rotation -0.5483711447998877 0.6479051710822986 0.5286851396017086 2.37642
+      name "ir0"
+      type "infra-red"
+    }
+  ]
+}
+TrackOne {
+  translation 0 0 0.005
+}
